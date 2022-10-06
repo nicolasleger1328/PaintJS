@@ -1,0 +1,362 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+body {
+  background-color: grey;
+}
+
+#my-canvas {
+  border: 2px solid black;
+  margin: 10px;
+}
+
+.tools-content {
+  background-color: lightgray;
+  width: 800px;
+  height: 250px;
+  border: 1px solid darkblue;
+  border-radius: 10px;
+  margin: auto;
+}
+
+.thickness {
+  display: flex;
+  align-items: center;
+  height: 60px;
+}
+.thickness-title {
+  font-family: "Gill Sans", sans-serif;
+  font-size: 1.2em;
+  font-weight: 700;
+  color: rgb(35, 150, 245);
+  width: 200px;
+  padding-left: 10px;
+  text-align: left;
+}
+.thickness-thin {
+  width: 100px;
+  height: 28px;
+  cursor: pointer;
+}
+.thickness-thin.active {
+  border: 2px solid black;
+}
+.thickness-reg {
+  width: 100px;
+  height: 28px;
+  margin-left: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.thickness-reg.active {
+  border: 2px solid black;
+}
+.thickness-thick {
+  width: 100px;
+  height: 28px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.thickness-thick.active {
+  border: 2px solid black;
+}
+.thickness-size {
+  display: flex;
+  align-items: center;
+}
+.thickness-size input {
+  cursor: pointer;
+}
+
+.color {
+  display: flex;
+  align-items: center;
+  height: 60px;
+}
+.color-title {
+  font-family: "Gill Sans", sans-serif;
+  font-size: 1.2em;
+  font-weight: 700;
+  color: rgb(35, 150, 245);
+  width: 200px;
+  padding-left: 10px;
+  text-align: left;
+}
+.color-title.picker {
+  width: 100px;
+}
+.color-black {
+  margin: 5px 5px 5px 0;
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  background-color: black;
+  border-radius: 100%;
+}
+.color-black.active {
+  border: 4px solid black;
+}
+.color-red {
+  margin: 5px 5px 5px 5px;
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  background-color: red;
+  border-radius: 100%;
+}
+.color-red.active {
+  border: 4px solid black;
+}
+.color-orange {
+  margin: 5px 5px 5px 5px;
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  background-color: orange;
+  border-radius: 100%;
+}
+.color-orange.active {
+  border: 4px solid black;
+}
+.color-green {
+  margin: 5px 5px 5px 5px;
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  background-color: green;
+  border-radius: 100%;
+}
+.color-green.active {
+  border: 4px solid black;
+}
+.color-skyblue {
+  margin: 5px 5px 5px 5px;
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  background-color: skyblue;
+  border-radius: 100%;
+}
+.color-skyblue.active {
+  border: 4px solid black;
+}
+.color-darkblue {
+  margin: 5px 5px 5px 5px;
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  background-color: darkblue;
+  border-radius: 100%;
+}
+.color-darkblue.active {
+  border: 4px solid black;
+}
+.color-violet {
+  margin: 5px 5px 5px 5px;
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  background-color: violet;
+  border-radius: 100%;
+}
+.color-violet.active {
+  border: 4px solid black;
+}
+.color-selected {
+  margin: 5px 5px 5px 5px;
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  background-color: violet;
+  border: 1px solid white;
+}
+.color-selected.active {
+  border: 4px solid black;
+}
+
+.color-btn {
+  transition: 0.5s;
+}
+
+.color-btn:hover {
+  scale: 1.2;
+}
+
+.tools {
+  display: flex;
+  align-items: center;
+  height: 60px;
+}
+.tools-title {
+  font-family: "Gill Sans", sans-serif;
+  font-size: 1.2em;
+  font-weight: 700;
+  color: rgb(35, 150, 245);
+  width: 200px;
+  padding-left: 10px;
+  text-align: left;
+}
+.tools-eraser {
+  margin: 5px 5px 5px 0px;
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+}
+.tools-eraser.active {
+  border: 4px solid black;
+}
+.tools-eraser i {
+  font-size: 1.2em;
+}
+.tools-erase {
+  margin: 5px 5px 5px 5px;
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+}
+.tools-erase i {
+  font-size: 1.2em;
+}
+
+.send {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+}
+.send-mail {
+  width: 100px;
+  height: 50px;
+  cursor: pointer;
+  background-color: rgb(35, 150, 245);
+  font-weight: 500;
+  transition: 0.1s;
+  border-radius: 10px;
+}
+.send-mail:hover {
+  scale: 1.5;
+}
+
+#my-form {
+  display: none;
+}
+
+#my-form.active {
+  display: block;
+  position: fixed;
+  top: 0;
+  /*    margin-bottom: 25px;
+      margin-top: 25px;*/
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(211, 211, 211, 0.8);
+}
+
+/*
+    load spinner
+*/
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  background-color: black;
+}
+
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/*fddsfsd*/
+.spinner-enable {
+  display: none;
+}
+
+.spinner-enable.active {
+  display: block;
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(211, 211, 211, 0.8);
+}
+
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.validation {
+  display: none;
+}
+
+.validation.active {
+  display: block;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  /*    margin-bottom: 25px;
+      margin-top: 25px;*/
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(211, 211, 211, 0.8);
+}
+
+.validation p {
+  border-radius: 5px;
+  border: 1px solid darkgreen;
+  margin: auto;
+  background-color: lightgreen;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
+  padding: 15px;
+  width: 40%;
+  display: block;
+  padding: 15px;
+  cursor: crosshair;
+}/*# sourceMappingURL=style.css.map */

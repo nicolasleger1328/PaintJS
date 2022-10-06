@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheap PaintLike</title>
+    <script type="module" src="js/main.js" defer></script>
+    <script src="https://kit.fontawesome.com/0886f797e8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <canvas id="my-canvas" width="800" height="600" ></canvas>
+    <section class="tools-content">
+        <div class="thickness">
+            <div class="thickness-title">Epaisseur</div>
+            <button class="thickness-thin thickness-btn" data-thickness="1">Fin</button>
+            <button class="thickness-reg thickness-btn active" data-thickness="5">Normal</button>
+            <button class="thickness-thick thickness-btn" data-thickness="10">Epais</button>
+        </div>
+        <div class="color">
+            <div class="color-title">Couleurs</div>
+            <div class="color-black color-btn  active" data-color="black"></div>
+            <div class="color-red color-btn " data-color="red"></div>
+            <div class="color-orange color-btn" data-color="orange"></div>
+            <div class="color-green color-btn" data-color="green"></div>
+            <div class="color-skyblue color-btn" data-color="skyblue"></div>
+            <div class="color-darkblue color-btn" data-color="darkblue"></div>
+            <div class="color-violet color-btn" data-color="violet"></div>
+            <div class="color-selected"></div>
+            <div class="color-title picker">Picker</div>
+            <input type="color" id="color_picker">
+        </div>
+        <div class="tools">
+            <div class="tools-title">Outils</div>
+            <div class="tools-eraser eraser-btn color-btn" data-color="white" title="Gomme"><i class="fa-solid fa-eraser"></i></div>
+            <div class="tools-erase erase-btn" title="Effacer le canvas"><i class="fa-solid fa-trash"></i></div>
+        </div>
+        <div class="send">
+            <button class="send-mail mail-btn">Envoyer une e-carte</button>
+        </div>
+    </section>
+    <section class="form">
+        <form  id="my-form">
+            <div class="form-example">
+                <label for="emaild">Enter your destiantion email:</label>
+                <input type="email" id="emaild" name="storyr" required>
+            </div>
+            <div class="form-example">
+                <label for="emaile">Enter your expediteur email:</label>
+                <input type="email" id="emaile" name="story" required>
+            </div>
+            <div class="form-example">
+                <label for="story">Tell us your story:</label>
+                <textarea id="story" name="storyz" rows="5" cols="33"></textarea>
+            </div>
+            <div class="form-example">
+              <input type="submit" value="Envoie ton mail">
+            </div>
+            <input type="hidden" id="image" name="image">
+            <button class="form-example close-btn">fermer</button>
+          </form>
+          <div class="spinner-enable"><div class="lds-ring spinner"><div></div><div></div><div></div><div></div></div></div>
+          <div class="validation">
+              <p></p>
+  
+          </div>
+    </section>
+    
+</body>
+</html>
