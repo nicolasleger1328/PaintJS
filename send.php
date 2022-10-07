@@ -5,8 +5,10 @@ use Symfony\Component\Mailer\Transport;
 use Symfony\Component\Mime\Email;
 
 require __DIR__ . '/vendor/autoload.php';
+require "./config.php";
 
-const MAILER_DSN ="";
+
+
 try{
 $transport = Transport::fromDsn(MAILER_DSN);
 $mailer = new Mailer($transport); 
